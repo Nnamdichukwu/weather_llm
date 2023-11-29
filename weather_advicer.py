@@ -1,8 +1,5 @@
 import os
 
-openai_api_key = st.secrets["openai_api_key"]
-weather_open_api_key = st.secrets["weather_open_api_key"]
-
 from langchain.document_loaders import WeatherDataLoader
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts.chat import (
@@ -13,7 +10,8 @@ from langchain.prompts.chat import (
 from langchain.schema import HumanMessage, SystemMessage
 import streamlit as st
 
-
+openai_api_key = st.secrets["openai_api_key"]
+weather_open_api_key = st.secrets["weather_open_api_key"]
 st.set_page_config(page_title="Weather Helper", page_icon=":robot:")
 st.header("Weather Helper")
 
