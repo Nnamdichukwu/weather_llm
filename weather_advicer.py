@@ -1,8 +1,7 @@
 import os
-from dotenv import load_dotenv
-load_dotenv()
-openai_api_key = os.getenv("openai_api_key")
-weather_open_api_key = os.getenv("weather_open_api_key")
+
+openai_api_key = st.secrets["openai_api_key"]
+weather_open_api_key = st.secrets["weather_open_api_key"]
 
 from langchain.document_loaders import WeatherDataLoader
 from langchain.chat_models import ChatOpenAI
